@@ -1,0 +1,17 @@
+repos:
+-   repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v2.3.0
+    hooks:
+    -   id: check-yaml
+    -   id: end-of-file-fixer
+    -   id: trailing-whitespace
+-   repo: local
+    hooks:
+    -   id: terraform-fmt
+        name: terraform-fmt
+        entry: ./terraform/scripts/format.sh
+        language: script
+    -   id: terraform-dox
+        name: terraform-dox
+        entry: ./terraform/scripts/docs.sh
+        language: script
